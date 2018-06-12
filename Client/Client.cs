@@ -16,7 +16,16 @@ namespace Client
 
         public void SendData(File file)
         {
-            Serialize.writeToStream(client.GetStream(), file);
+            try
+            {
+                Serialize.writeToStream(client.GetStream(), file);
+            }
+            catch(Exception)
+            {
+                Console.WriteLine("Failed in sending data");
+                Console.ReadKey();
+            }
+            
         }
 
         public void Dispose()

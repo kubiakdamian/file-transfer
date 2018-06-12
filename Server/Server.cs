@@ -14,8 +14,8 @@ namespace Server
 
         public Server()
         {
-            this.listener = new TcpListener(IPAddress.Parse(address), port);
-            this.listener.Start();
+            listener = new TcpListener(IPAddress.Parse(address), port);
+            listener.Start();
         }
 
         public void listen()
